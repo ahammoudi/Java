@@ -23,7 +23,6 @@ print_env() {
   cat << EOF
 Build Environment Setup
 -----------------------
-
 Script                 $SCRIPT_NAME
 Base directory         $BASEDIR
 Working directory      $WORKINGDIR
@@ -86,6 +85,33 @@ download_and_install_oracle_jdk() {
 
 }
 
+download_and_install_maven() {
+  maven_version=$1
+  final_name="apache-maven-${maven_version}"
+  download_url=http://repo1.maven.org/maven2/org/apache/maven/apache-maven/${maven_version}/apache-maven-${maven_version}-bin.tar.gz
+  download_target=${DOWNLOAD_DIR}/${final_name}-bin.tar.gz
+
+  if [ ! -d $INSTALL_DIR/${final_name} ]; then
+
+    # Download if necessary
+    if [ ! -f ${download_target} ]; then
+      echo "Downloading ${final_name}"
+      curl --create-dirs -o ${download_target} "${download_url}"
+    else
+      echo "${download_target} does already exist. No need to download."
+    fi
+
+    # Extract and install
+    echo "Extracting ${download_target} to ${INSTALL_DIR}"
+    tar --overwrite -zxf ${download_target} -C ${INSTALL_DIR}
+  else
+    echo "${INSTALL_DIR}/${final_name} does already exist. Nothing to install."
+  fi
+
+  echo "Installation of ${final_name} completed."
+
+}
+
 # ###########################################################################
 # Main
 # ###########################################################################
@@ -93,4 +119,4 @@ download_and_install_oracle_jdk() {
 print_env
 init
 download_and_install_oracle_jdk "8" "40" "26"
-
+download_and_install_maven "3.3.1"
