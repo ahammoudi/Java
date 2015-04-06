@@ -93,3 +93,5 @@ download_and_install_oracle_jdk() {
 print_env
 init
 download_and_install_oracle_jdk "8" "40" "26"
+
+export JAVA_HOME=${INSTALL_DIR}/oracle-jdk-1.8.0_40
