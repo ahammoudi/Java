@@ -5,5 +5,6 @@
 
 # Useful Links:
 - Travis Doc: http://docs.travis-ci.com/
--- Build Configuration: http://docs.travis-ci.com/user/build-configuration/
+  - Build Configuration: http://docs.travis-ci.com/user/build-configuration/
+  - Environment Variables: http://docs.travis-ci.com/user/environment-variables/
 - Travis Lint: http://lint.travis-ci.org/
