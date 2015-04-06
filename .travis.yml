@@ -3,7 +3,7 @@ cache:
   directories:
   - $HOME/.m2
 
-before_script:
+install:
   - chmod a+rx .travis/*.sh
   - .travis/setup-environment.sh
 
