@@ -74,7 +74,7 @@ download_and_install_oracle_jdk() {
     tar -zxf ${download_target} -C ${INSTALL_DIR}
 
     echo "Rename to ${final_name}"
-    mv ${INSTALL_DIR}/jdk${archive_version} ${INSTALL_DIR}/${final_name}
+    mv -f ${INSTALL_DIR}/jdk${archive_version} ${INSTALL_DIR}/${final_name}
   else
     echo "${INSTALL_DIR}/${final_name} does already exist. Nothing to install."
   fi
