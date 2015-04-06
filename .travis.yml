@@ -7,6 +7,9 @@ install:
   - chmod a+rx .travis/*.sh
   - .travis/setup-environment.sh
 
+env:
+  - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_40
+  
 cache:
   directories:
   - $HOME/bin
