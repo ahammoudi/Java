@@ -6,3 +6,9 @@ cache:
 before_script:
   - chmod a+rx .travis/*.sh
   - .travis/setup-environment.sh
+
+cache:
+  directories:
+  - $HOME/download
+  - $HOME/bin
+  - $HOME/.m2
