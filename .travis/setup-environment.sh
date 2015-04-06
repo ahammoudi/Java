@@ -39,7 +39,7 @@ init() {
   mkdir -vp ${DOWNLOAD_DIR}
   mkdir -vp ${INSTALL_DIR}
 
-  echo "Initializatin complete"
+  echo "Initialization complete"
 }
 
 download_and_install_oracle_jdk() {
@@ -62,16 +62,19 @@ download_and_install_oracle_jdk() {
   download_url=http://download.oracle.com/otn-pub/java/jdk/${jdk_full_version_string}/jdk-${jdk_version_string}-linux-x64.tar.gz
   download_target=${DOWNLOAD_DIR}/oracle-jdk-${jdk_version_string}.tar.gz
 
-  if [ ! -f ${download_target} ]; then
-    echo "Downloading ${final_name}"
-    curl --create-dirs -o ${download_target} -LH "${ORACLE_DOWNLOAD_COOKIE}" "${download_url}"
-  else
-    echo "${download_target} does already exist. No need to download."
-  fi
-
   if [ ! -d $INSTALL_DIR/${final_name} ]; then
+
+    # Download if necessary
+    if [ ! -f ${download_target} ]; then
+      echo "Downloading ${final_name}"
+      curl --create-dirs -o ${download_target} -LH "${ORACLE_DOWNLOAD_COOKIE}" "${download_url}"
+    else
+      echo "${download_target} does already exist. No need to download."
+    fi
+
+    # Extract and install
     echo "Extracting ${download_target} to ${INSTALL_DIR}"
-    tar -zxf ${download_target} -C ${INSTALL_DIR}
+    tar --overwrite -zxf ${download_target} -C ${INSTALL_DIR}
 
     echo "Rename to ${final_name}"
     mv -f ${INSTALL_DIR}/jdk${archive_version} ${INSTALL_DIR}/${final_name}

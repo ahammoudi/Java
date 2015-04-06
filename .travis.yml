@@ -9,6 +9,5 @@ install:
 
 cache:
   directories:
-  - $HOME/download
   - $HOME/bin
   - $HOME/.m2
