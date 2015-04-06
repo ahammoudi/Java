@@ -41,7 +41,7 @@ init() {
   echo "Initialization complete"
 }
 
-download_and_install_oracle_jdk() {
+install_oracle_jdk() {
   jdk_major_version=$1
   jdk_minor_version=$2
   jdk_build_number=$3
@@ -85,7 +85,7 @@ download_and_install_oracle_jdk() {
 
 }
 
-download_and_install_maven() {
+install_maven() {
   maven_version=$1
   final_name="apache-maven-${maven_version}"
   download_url=http://repo1.maven.org/maven2/org/apache/maven/apache-maven/${maven_version}/apache-maven-${maven_version}-bin.tar.gz
@@ -118,5 +118,5 @@ download_and_install_maven() {
 
 print_env
 init
-download_and_install_oracle_jdk "8" "40" "26"
-download_and_install_maven "3.3.1"
+install_oracle_jdk "8" "40" "26"
+install_maven "3.3.1"
