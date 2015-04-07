@@ -6,6 +6,7 @@ install:
 
 env:
   global:
+    - REQUIRE_JAVA_RUNTIMES="oracle-jdk-1.8.0_40,oracle-jdk-1.7.0_75"
     - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_40
     - MAVEN_HOME=$HOME/bin/apache-maven-3.3.1
     - PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH

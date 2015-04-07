@@ -30,6 +30,10 @@ Installation Root      $ROOT_DIR
 Download directory     $DOWNLOAD_DIR
 Installation directory $INSTALL_DIR
 
+Requested Installations
+-----------------------
+Java Runtimes: $REQUIRE_JAVA_RUNTIMES
+
 EOF
 }
 
@@ -112,11 +116,49 @@ install_maven() {
 
 }
 
+install_java_runtimes() {
+if [ -z $REQUIRE_JAVA_RUNTIMES ]; then
+  echo "No Java runtimes specified."
+fi
+
+TMP_IFS=$IFS
+IFS=","
+for rt in $REQUIRE_JAVA_RUNTIMES; do
+  case $rt in
+    oracle-jdk-1.8.0_40)
+      install_oracle_jdk "8" "40" "26";;
+
+     oracle-jdk-1.8.0_31)
+       install_oracle_jdk "8" "31" "13";;
+
+     oracle-jdk-1.8.0_25)
+       install_oracle_jdk "8" "25" "17";;
+
+     oracle-jdk-1.8.0_20)
+       install_oracle_jdk "8" "20" "26";;
+
+     oracle-jdk-1.8.0_11)
+       install_oracle_jdk "8" "11" "12";;
+
+     oracle-jdk-1.8.0_05)
+       install_oracle_jdk "8" "5" "13";;
+
+     oracle-jdk-1.8.0)
+       install_oracle_jdk "8" "" "132";;
+
+     oracle-jdk-1.7.0_75)
+       install_oracle_jdk "7" "75" "13";;
+   esac
+done
+IFS=$TMP_IFS
+
+}
+
 # ###########################################################################
 # Main
 # ###########################################################################
 
 print_env
 init
-install_oracle_jdk "8" "40" "26"
+install_java_runtimes
 install_maven "3.3.1"
