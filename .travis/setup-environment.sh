@@ -61,8 +61,9 @@ install_oracle_java() {
   # JDK version number as it appears within the archive, e.g. 1.8.0_40
   archive_version="1.${jdk_major_version}.0_${jdk_minor_version}"
   
+  
   # Folder name in the downloaded archive
-  case $runtime in
+  case $java_runtime in
     jdk|server-jre) archive_content="jdk";;
     jre) archive_content="jre";;
   esac
