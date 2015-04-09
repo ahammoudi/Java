@@ -32,7 +32,8 @@ Installation directory $INSTALL_DIR
 
 Requested Installations
 -----------------------
-Java Runtimes: $REQUIRED_JAVA_RUNTIMES
+Java runtimes:  $REQUIRED_JAVA_RUNTIMES
+Maven versions: $REQUIRED_MAVEN_VERSIONS
 
 EOF
 }
@@ -255,6 +256,20 @@ IFS=$tmp_ifs
 
 }
 
+install_maven_versions() {
+if [ -z $REQUIRED_MAVEN_VERSIONS ]; then
+  echo "No Maven versions specified."
+fi
+
+tmp_ifs=$IFS
+IFS=","
+for maven_version in $REQUIRED_MAVEN_VERSIONS; do
+  install_maven "${maven_version}"
+done
+
+IFS=$tmp_ifs
+}
+
 # ###########################################################################
 # Main
 # ###########################################################################
@@ -262,4 +277,4 @@ IFS=$tmp_ifs
 print_env
 init
 install_java_runtimes
-install_maven "3.3.1"
+install_maven_versions
