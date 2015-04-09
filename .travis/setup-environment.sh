@@ -32,7 +32,7 @@ Installation directory $INSTALL_DIR
 
 Requested Installations
 -----------------------
-Java Runtimes: $REQUIRE_JAVA_RUNTIMES
+Java Runtimes: $REQUIRED_JAVA_RUNTIMES
 
 EOF
 }
@@ -126,13 +126,13 @@ install_maven() {
 }
 
 install_java_runtimes() {
-if [ -z $REQUIRE_JAVA_RUNTIMES ]; then
+if [ -z $REQUIRED_JAVA_RUNTIMES ]; then
   echo "No Java runtimes specified."
 fi
 
 tmp_ifs=$IFS
 IFS=","
-for rt in $REQUIRE_JAVA_RUNTIMES; do
+for rt in $REQUIRED_JAVA_RUNTIMES; do
   case $rt in
      oracle-jdk-1.8.0_40) install_oracle_java "jdk"  "8" "40" "26";;
      oracle-server-jre-1.8.0_40) install_oracle_java "server-jre"  "8" "40" "26";;
