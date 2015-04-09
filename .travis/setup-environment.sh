@@ -45,7 +45,7 @@ init() {
   echo "Initialization complete"
 }
 
-install_oracle_jdk() {
+install_oracle_java() {
   java_runtime=$1
   jdk_major_version=$2
   jdk_minor_version=$3
@@ -132,39 +132,39 @@ tmp_ifs=$IFS
 IFS=","
 for rt in $REQUIRE_JAVA_RUNTIMES; do
   case $rt in
-     oracle-jdk-1.8.0_40) install_oracle_jdk "jdk"  "8" "40" "26";;
-     oracle-jdk-1.8.0_31) install_oracle_jdk "jdk"  "8" "31" "13";;
-     oracle-jdk-1.8.0_25) install_oracle_jdk "jdk"  "8" "25" "17";;
-     oracle-jdk-1.8.0_20) install_oracle_jdk "jdk"  "8" "20" "26";;
-     oracle-jdk-1.8.0_11) install_oracle_jdk "jdk"  "8" "11" "12";;
-     oracle-jdk-1.8.0_05) install_oracle_jdk "jdk"  "8" "5" "13";;
-     oracle-jdk-1.8.0) install_oracle_jdk "jdk"  "8" "" "132";;
-     oracle-jdk-1.7.0_75) install_oracle_jdk "jdk"  "7" "75" "13";;
-     oracle-jdk-1.7.0_72) install_oracle_jdk "jdk"  "7" "72" "14";;
-     oracle-jdk-1.7.0_71) install_oracle_jdk "jdk"  "7" "71" "14";;
-     oracle-jdk-1.7.0_67) install_oracle_jdk "jdk"  "7" "67" "01";;
-     oracle-jdk-1.7.0_65) install_oracle_jdk "jdk"  "7" "65" "17";;
-     oracle-jdk-1.7.0_60) install_oracle_jdk "jdk"  "7" "60" "19";;
-     oracle-jdk-1.7.0_55) install_oracle_jdk "jdk"  "7" "55" "13";;
-     oracle-jdk-1.7.0_51) install_oracle_jdk "jdk"  "7" "51" "13";;
-     oracle-jdk-1.7.0_45) install_oracle_jdk "jdk"  "7" "45" "18";;
-     oracle-jdk-1.7.0_40) install_oracle_jdk "jdk"  "7" "40" "43";;
-     oracle-jdk-1.7.0_25) install_oracle_jdk "jdk"  "7" "25" "15";;
-     oracle-jdk-1.7.0_21) install_oracle_jdk "jdk"  "7" "21" "11";;
-     oracle-jdk-1.7.0_17) install_oracle_jdk "jdk"  "7" "17" "02";;
-     oracle-jdk-1.7.0_15) install_oracle_jdk "jdk"  "7" "15" "03";;
-     oracle-jdk-1.7.0_13) install_oracle_jdk "jdk"  "7" "13" "20";;
-     oracle-jdk-1.7.0_11) install_oracle_jdk "jdk"  "7" "11" "21";;
-     oracle-jdk-1.7.0_10) install_oracle_jdk "jdk"  "7" "10" "18";;
-     oracle-jdk-1.7.0_9) install_oracle_jdk "jdk"  "7" "9" "05";;
-     oracle-jdk-1.7.0_7) install_oracle_jdk "jdk"  "7" "7" "10";;
-     oracle-jdk-1.7.0_6) install_oracle_jdk "jdk"  "7" "6" "24";;
-     oracle-jdk-1.7.0_5) install_oracle_jdk "jdk"  "7" "5" "06";;
-     oracle-jdk-1.7.0_4) install_oracle_jdk "jdk"  "7" "4" "20";;
-     oracle-jdk-1.7.0_3) install_oracle_jdk "jdk"  "7" "3" "04";;
-     oracle-jdk-1.7.0_2) install_oracle_jdk "jdk"  "7" "2" "13";;
-     oracle-jdk-1.7.0_1) install_oracle_jdk "jdk"  "7" "1" "08";;
-     oracle-jdk-1.7.0) install_oracle_jdk "jdk"  "7" "" "";;
+     oracle-jdk-1.8.0_40) install_oracle_java "jdk"  "8" "40" "26";;
+     oracle-jdk-1.8.0_31) install_oracle_java "jdk"  "8" "31" "13";;
+     oracle-jdk-1.8.0_25) install_oracle_java "jdk"  "8" "25" "17";;
+     oracle-jdk-1.8.0_20) install_oracle_java "jdk"  "8" "20" "26";;
+     oracle-jdk-1.8.0_11) install_oracle_java "jdk"  "8" "11" "12";;
+     oracle-jdk-1.8.0_05) install_oracle_java "jdk"  "8" "5" "13";;
+     oracle-jdk-1.8.0) install_oracle_java "jdk"  "8" "" "132";;
+     oracle-jdk-1.7.0_75) install_oracle_java "jdk"  "7" "75" "13";;
+     oracle-jdk-1.7.0_72) install_oracle_java "jdk"  "7" "72" "14";;
+     oracle-jdk-1.7.0_71) install_oracle_java "jdk"  "7" "71" "14";;
+     oracle-jdk-1.7.0_67) install_oracle_java "jdk"  "7" "67" "01";;
+     oracle-jdk-1.7.0_65) install_oracle_java "jdk"  "7" "65" "17";;
+     oracle-jdk-1.7.0_60) install_oracle_java "jdk"  "7" "60" "19";;
+     oracle-jdk-1.7.0_55) install_oracle_java "jdk"  "7" "55" "13";;
+     oracle-jdk-1.7.0_51) install_oracle_java "jdk"  "7" "51" "13";;
+     oracle-jdk-1.7.0_45) install_oracle_java "jdk"  "7" "45" "18";;
+     oracle-jdk-1.7.0_40) install_oracle_java "jdk"  "7" "40" "43";;
+     oracle-jdk-1.7.0_25) install_oracle_java "jdk"  "7" "25" "15";;
+     oracle-jdk-1.7.0_21) install_oracle_java "jdk"  "7" "21" "11";;
+     oracle-jdk-1.7.0_17) install_oracle_java "jdk"  "7" "17" "02";;
+     oracle-jdk-1.7.0_15) install_oracle_java "jdk"  "7" "15" "03";;
+     oracle-jdk-1.7.0_13) install_oracle_java "jdk"  "7" "13" "20";;
+     oracle-jdk-1.7.0_11) install_oracle_java "jdk"  "7" "11" "21";;
+     oracle-jdk-1.7.0_10) install_oracle_java "jdk"  "7" "10" "18";;
+     oracle-jdk-1.7.0_9) install_oracle_java "jdk"  "7" "9" "05";;
+     oracle-jdk-1.7.0_7) install_oracle_java "jdk"  "7" "7" "10";;
+     oracle-jdk-1.7.0_6) install_oracle_java "jdk"  "7" "6" "24";;
+     oracle-jdk-1.7.0_5) install_oracle_java "jdk"  "7" "5" "06";;
+     oracle-jdk-1.7.0_4) install_oracle_java "jdk"  "7" "4" "20";;
+     oracle-jdk-1.7.0_3) install_oracle_java "jdk"  "7" "3" "04";;
+     oracle-jdk-1.7.0_2) install_oracle_java "jdk"  "7" "2" "13";;
+     oracle-jdk-1.7.0_1) install_oracle_java "jdk"  "7" "1" "08";;
+     oracle-jdk-1.7.0) install_oracle_java "jdk"  "7" "" "";;
    esac
 done
 IFS=$tmp_ifs
