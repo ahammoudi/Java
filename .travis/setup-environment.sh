@@ -286,7 +286,26 @@ for rt in $REQUIRED_JAVA_RUNTIMES; do
      oracle-jre-1.7.0) install_oracle_java "jre"  "7" "" "";;
 
      azul-zulu-1.8.0_40) install_azul_zulu "2015-03-8.6-bin" "1.8.0_40" "8.6.0.1";;
-
+     azul-zulu-1.8.0_31) install_azul_zulu "2015-01-8.5-bin" "1.8.0_31" "8.5.0.1";;
+     azul-zulu-1.8.0_25) install_azul_zulu "2014-10-8.4-bin" "1.8.0_25" "8.4.0.1";;
+     azul-zulu-1.8.0_20) install_azul_zulu "2014-09-8.3-bin" "1.8.0_20" "8.3.0.1";;
+     azul-zulu-1.8.0_20) install_azul_zulu "2014-09-8.3-bin" "1.8.0_20" "8.3.0.1";;
+     azul-zulu-1.8.0_11) install_azul_zulu "2014-07-8.2-bin" "1.8.0_11" "8.2.0.1";;
+     azul-zulu-1.8.0_05) install_azul_zulu "2014-05-8.1-bin" "1.8.0_05" "8.1.0.6";;
+     azul-zulu-1.8.0) install_azul_zulu "2014-04-8.0-bin" "1.8.0" "8.0.0.3";;
+     azul-zulu-1.7.0_76) install_azul_zulu "2015-01-8.5-bin" "1.7.0_76" "7.8.0.3";;
+     azul-zulu-1.7.0_72) install_azul_zulu "2014-10-8.4-bin" "1.7.0_72" "7.7.0.1";;
+     azul-zulu-1.7.0_65) install_azul_zulu "2014-07-8.2-bin" "1.7.0_65" "7.6.0.1";;
+     azul-zulu-1.7.0_60) install_azul_zulu "2014-06-7.5-bin" "1.7.0_60" "7.5.0.1";;
+     azul-zulu-1.7.0_55) install_azul_zulu "2014-05-8.1-bin" "1.7.0_55" "7.4.0.5";;
+     azul-zulu-1.7.0_51) install_azul_zulu "2014-03-7.3-bin" "1.7.0_51" "7.3.0.4";;
+     azul-zulu-1.6.0_59) install_azul_zulu "2015-01-8.5-bin" "1.6.0_59" "6.7.0.2";;
+     azul-zulu-1.6.0_56) install_azul_zulu "2014-10-8.4-bin" "1.6.0_56" "6.6.0.1";;
+     azul-zulu-1.6.0_53) install_azul_zulu "2014-07-8.2-bin" "1.6.0_53" "6.5.0.2";;
+     azul-zulu-1.6.0_53) install_azul_zulu "2014-07-8.2-bin" "1.6.0_53" "6.5.0.2";;
+     azul-zulu-1.6.0_49) install_azul_zulu "2014-05-8.1-bin" "1.6.0_49" "6.4.0.6";;
+     azul-zulu-1.6.0_47) install_azul_zulu "2014-03-7.3-bin" "1.6.0_47" "6.3.0.3";;
+     azul-zulu-1.6.0_42) install_azul_zulu "2014-01-7.2-bin" "1.6.0_42" "6.2.0.9";;
    esac
 done
 IFS=$tmp_ifs
