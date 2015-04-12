@@ -125,7 +125,7 @@ install_azul_zulu() {
     unzip -q -o -d ${INSTALL_DIR} ${download_target} 
 
     echo "Rename to ${final_name}"
-    mv -f ${INSTALL_DIR}/${archive_content}${archive_version} ${INSTALL_DIR}/${final_name}
+    mv -f ${INSTALL_DIR}/${archive_content} ${INSTALL_DIR}/${final_name}
   else
     echo "${INSTALL_DIR}/${final_name} does already exist. Nothing to install."
   fi
