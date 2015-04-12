@@ -18,6 +18,7 @@ INSTALL_DIR=${ROOT_DIR}/bin
 # Variables
 # ###########################################################################
 ORACLE_DOWNLOAD_COOKIE="Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"
+AZUL_DOWNLOAD_REFERER="Referer: http://www.azulsystems.com/products/zulu/downloads"
 
 print_env() {
   cat << EOF
@@ -96,6 +97,39 @@ install_oracle_java() {
   fi
 
   echo "Installation of ${final_name} completed."
+
+}
+
+install_azul_zulu() {
+  dir=$1
+  java_version=$2
+  zulu_version=$3
+
+  download_url=http://cdn.azulsystems.com/zulu/${dir}/zulu${java_version}-${zulu_version}-x86lx64.zip
+  download_target=${DOWNLOAD_DIR}/azul-zulu-${java_version}-x86lx64.zip
+  archive_content=zulu${java_version}-${zulu_version}-x86lx64
+  final_name=azul-zulu-${java_version}
+
+  if [ ! -d $INSTALL_DIR/${final_name} ]; then
+
+    # Download if necessary
+    if [ ! -f ${download_target} ]; then
+      echo "Downloading ${final_name}"
+      curl --create-dirs -o ${download_target} -LH "${AZUL_DOWNLOAD_REFERER}" "${download_url}"
+    else
+      echo "${download_target} does already exist. No need to download."
+    fi
+
+    # Extract and install
+    echo "Extracting ${download_target} to ${INSTALL_DIR}"
+    unzip -o -d ${INSTALL_DIR} ${download_target} 
+
+    echo "Rename to ${final_name}"
+    mv -f ${INSTALL_DIR}/${archive_content}${archive_version} ${INSTALL_DIR}/${final_name}
+  else
+    echo "${INSTALL_DIR}/${final_name} does already exist. Nothing to install."
+  fi
+
 
 }
 
@@ -250,6 +284,9 @@ for rt in $REQUIRED_JAVA_RUNTIMES; do
      
      oracle-jdk-1.7.0) install_oracle_java "jdk"  "7" "" "";;
      oracle-jre-1.7.0) install_oracle_java "jre"  "7" "" "";;
+
+     azul-zulu-1.8.0_40) install_azul_zulu "2015-03-8.6-bin" "1.8.0_40" "8.6.0.1";;
+
    esac
 done
 IFS=$tmp_ifs
