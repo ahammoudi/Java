@@ -122,7 +122,7 @@ install_azul_zulu() {
 
     # Extract and install
     echo "Extracting ${download_target} to ${INSTALL_DIR}"
-    unzip -o -d ${INSTALL_DIR} ${download_target} 
+    unzip -q -o -d ${INSTALL_DIR} ${download_target} 
 
     echo "Rename to ${final_name}"
     mv -f ${INSTALL_DIR}/${archive_content}${archive_version} ${INSTALL_DIR}/${final_name}
