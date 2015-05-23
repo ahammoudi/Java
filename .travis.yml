@@ -5,8 +5,8 @@ install:
   - .travis/setup-environment.sh
   - echo $JAVA_HOME
   - echo $MAVEN_HOME
-  - $JAVA_HOME/bin/java
-  - $MAVEN_HOME/bin/mvn
+  - $JAVA_HOME/bin/java -version
+  - $MAVEN_HOME/bin/mvn -version
 
 env:
   global:
