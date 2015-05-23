@@ -3,19 +3,18 @@ language: java
 install:
   - chmod a+rx .travis/*.sh
   - .travis/setup-environment.sh
+  - .travis/setup-mavenrc.sh
 
 env:
   global:
     - REQUIRED_JAVA_RUNTIMES="oracle-jdk-1.8.0_45,oracle-jre-1.8.0_45,oracle-server-jre-1.7.0_80,oracle-server-jre-1.7.0_79,azul-zulu-1.8.0_45,azul-zulu-1.7.0_80,azul-zulu-1.7.0_79"
     - REQUIRED_MAVEN_VERSIONS="3.3.3,3.2.5"
-    - USE_JAVA=$HOME/bin/oracle-jdk-1.8.0_45
-    - USE_MAVEN=$HOME/bin/apache-maven-3.3.3
+    - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_45
+    - MAVEN_HOME=$HOME/bin/apache-maven-3.3.3
 
 script:
-  - export JAVA_HOME=$USE_JAVA
-  - export MAVEN_HOME=$USE_MAVEN
   - export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
-  - cat /etc/mavenrc
+  - cat ~/.mavenrc
   - $JAVA_HOME/bin/java -version
   - $MAVEN_HOME/bin/mvn -version
   
