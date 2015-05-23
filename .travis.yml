@@ -1,8 +1,12 @@
-language: java
+language: c
 
 install:
   - chmod a+rx .travis/*.sh
   - .travis/setup-environment.sh
+  - echo $JAVA_HOME
+  - echo $MAVEN_HOME
+  - $JAVA_HOME/bin/java
+  - $MAVEN_HOME/bin/mvn
 
 env:
   global:
