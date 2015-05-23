@@ -1,3 +1,4 @@
+# The 'java' language does some JAVA_HOME magic that I don't want here.
 language: c
 
 install:
