@@ -5,8 +5,6 @@ install:
   - .travis/setup-environment.sh
   - echo $JAVA_HOME
   - echo $MAVEN_HOME
-  - $JAVA_HOME/bin/java -version
-  - $MAVEN_HOME/bin/mvn -version
 
 env:
   global:
@@ -15,6 +13,10 @@ env:
     - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_45
     - MAVEN_HOME=$HOME/bin/apache-maven-3.3.3
     - PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+script:
+  - $JAVA_HOME/bin/java -version
+  - $MAVEN_HOME/bin/mvn -version
   
 cache:
   directories:
