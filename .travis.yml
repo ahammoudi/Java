@@ -18,6 +18,7 @@ script:
   - cat ~/.mavenrc
   - alias
   - env
+  - javac -version
   - $JAVA_HOME/bin/java -version
   - $MAVEN_HOME/bin/mvn -version
   
