@@ -169,6 +169,10 @@ tmp_ifs=$IFS
 IFS=","
 for rt in $REQUIRED_JAVA_RUNTIMES; do
   case $rt in
+     oracle-jdk-1.8.0_51) install_oracle_java "jdk"  "8" "51" "16";;
+     oracle-server-jre-1.8.0_51) install_oracle_java "server-jre"  "8" "51" "16";;
+     oracle-jre-1.8.0_51) install_oracle_java "jre"  "8" "51" "16";;
+     
      oracle-jdk-1.8.0_45) install_oracle_java "jdk"  "8" "45" "14";;
      oracle-server-jre-1.8.0_45) install_oracle_java "server-jre"  "8" "45" "14";;
      oracle-jre-1.8.0_45) install_oracle_java "jre"  "8" "45" "14";;
