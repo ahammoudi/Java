@@ -205,10 +205,6 @@ for rt in $REQUIRED_JAVA_RUNTIMES; do
      oracle-server-jre-1.8.0) install_oracle_java "server-jre"  "8" "" "132";;
      oracle-jre-1.8.0) install_oracle_java "jre"  "8" "" "132";;
      
-     oracle-jdk-1.7.0_85) install_oracle_java "jdk"  "7" "85" "15";;
-     oracle-server-jre-1.7.0_85) install_oracle_java "server-jre"  "7" "85" "15";;
-     oracle-jre-1.7.0_85) install_oracle_java "jre"  "7" "85" "15";;
-     
      oracle-jdk-1.7.0_80) install_oracle_java "jdk"  "7" "80" "15";;
      oracle-server-jre-1.7.0_80) install_oracle_java "server-jre"  "7" "80" "15";;
      oracle-jre-1.7.0_80) install_oracle_java "jre"  "7" "80" "15";;
