@@ -311,7 +311,7 @@ for rt in $REQUIRED_JAVA_RUNTIMES; do
      azul-zulu-1.8.0_11) install_azul_zulu "2014-07-8.2-bin" "1.8.0_11" "8.2.0.1";;
      azul-zulu-1.8.0_05) install_azul_zulu "2014-05-8.1-bin" "1.8.0_05" "8.1.0.6";;
      azul-zulu-1.8.0) install_azul_zulu "2014-04-8.0-bin" "1.8.0" "8.0.0.3";;
-     azul-zulu-1.7.0_85) install_azul_zulu "2015-07-7.11-bin" "1.7.0_80" "7.11.0.3";;
+     azul-zulu-1.7.0_85) install_azul_zulu "2015-07-7.11-bin" "1.7.0_85" "7.11.0.3";;
      azul-zulu-1.7.0_80) install_azul_zulu "2015-04-8.7-bin" "1.7.0_80" "7.10.0.1";;
      azul-zulu-1.7.0_79) install_azul_zulu "2015-04-8.7-bin" "1.7.0_79" "7.9.0.2";;
      azul-zulu-1.7.0_76) install_azul_zulu "2015-01-8.5-bin" "1.7.0_76" "7.8.0.3";;
