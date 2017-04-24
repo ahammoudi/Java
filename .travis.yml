@@ -8,9 +8,9 @@ install:
 
 env:
   global:
-    - REQUIRED_JAVA_RUNTIMES="oracle-jdk-1.8.0_102,oracle-jre-1.8.0_102,oracle-server-jre-1.7.0_80,oracle-server-jre-1.7.0_79,azul-zulu-8.0.112,azul-zulu-7.0.121,azul-zulu-6.0.87"
+    - REQUIRED_JAVA_RUNTIMES="oracle-jdk-1.8.0_131,oracle-jre-1.8.0_131,oracle-server-jre-1.7.0_80,oracle-server-jre-1.7.0_79,azul-zulu-8.0.112,azul-zulu-7.0.121,azul-zulu-6.0.87"
     - REQUIRED_MAVEN_VERSIONS="3.3.9,3.3.3"
-    - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_102
+    - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_131
     - MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
 
 script:
@@ -22,9 +22,9 @@ script:
   - javac -version
   - $JAVA_HOME/bin/java -version
   - $MAVEN_HOME/bin/mvn -version
-  
+
 cache:
   directories:
   - $HOME/download
   - $HOME/.m2
-  
+
