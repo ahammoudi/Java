@@ -9,9 +9,9 @@ install:
 env:
   global:
     - REQUIRED_JAVA_RUNTIMES="oracle-jdk-1.8.0_131,oracle-jre-1.8.0_131,oracle-server-jre-1.7.0_80,oracle-server-jre-1.7.0_79,azul-zulu-8.0.112,azul-zulu-7.0.121,azul-zulu-6.0.87"
-    - REQUIRED_MAVEN_VERSIONS="3.3.9,3.3.3"
+    - REQUIRED_MAVEN_VERSIONS="3.5.0,3.3.9"
     - JAVA_HOME=$HOME/bin/oracle-jdk-1.8.0_131
-    - MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
+    - MAVEN_HOME=$HOME/bin/apache-maven-3.5.0
 
 script:
   - export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
