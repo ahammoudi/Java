@@ -401,6 +401,8 @@ for rt in $REQUIRED_JAVA_RUNTIMES; do
      oracle-jdk-1.7.0) install_oracle_java "jdk"  "7" "" "";;
      oracle-jre-1.7.0) install_oracle_java "jre"  "7" "" "";;
 
+     azul-zulu-8.0.131) install_azul_zulu2 "8.21.0.1" "8.0.131";;
+     azul-zulu-8.0.121) install_azul_zulu2 "8.20.0.5" "8.0.121";;
      azul-zulu-8.0.112) install_azul_zulu2 "8.19.0.1" "8.0.112";;
      azul-zulu-8.0.102) install_azul_zulu2 "8.17.0.3" "8.0.102";;
      azul-zulu-8.0.92) install_azul_zulu2 "8.15.0.1" "8.0.92";;
